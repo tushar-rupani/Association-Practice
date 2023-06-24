@@ -1,41 +1,19 @@
-"use strict";
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("address", {
+    await queryInterface.createTable("restaurants", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      entity_type: {
-        type: Sequelize.ENUM("USER", "RESTAURANT"),
-        allowNull: false,
-      },
-      entity_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      street: {
-        allowNull: false,
+      name: {
         type: Sequelize.STRING,
-      },
-      landmark: {
         allowNull: false,
-        type: Sequelize.STRING,
       },
-      house_no: {
-        allowNull: false,
+      owner: {
         type: Sequelize.STRING,
-      },
-      city: {
         allowNull: false,
-        type: Sequelize.STRING,
-      },
-      zip: {
-        allowNull: false,
-        type: Sequelize.STRING,
       },
       created_at: {
         allowNull: false,
@@ -52,6 +30,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("address");
+    await queryInterface.dropTable("restaurants");
   },
 };
