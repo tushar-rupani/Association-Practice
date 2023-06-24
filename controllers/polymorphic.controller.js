@@ -3,7 +3,6 @@ const Address = db.Address;
 
 const polymorphicController = async (req, res) => {
   try {
-    console.log(req.body);
     const address = await Address.findOne({
       where: {
         entity_type: req.body.type,
