@@ -16,12 +16,13 @@ module.exports = {
           key: "id",
         },
       },
-      restaurant_id: {
+      favourite_id: {
         type: Sequelize.INTEGER,
-        references: {
-          model: "restaurants",
-          key: "id",
-        },
+        allowNull: false,
+      },
+      favourite_type: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       created_at: {
         allowNull: false,

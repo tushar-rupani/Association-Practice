@@ -127,3 +127,7 @@ A restaurant can have multiple tag/badge and same as a single tag can be assigne
 A user can have multiple address and at a same time a restaurant is also having an address. In this case this is how I am managing my table to make it polymorphic.
 
 ![Polymorphic Image](image.png)
+
+## Many to Many Polymorphic
+
+My example demonstrates a many-to-many polymorphic relationship where users can favorite multiple entities of different types, and each entity can be favorited by multiple users.

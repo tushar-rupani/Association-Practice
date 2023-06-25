@@ -3,22 +3,26 @@ module.exports = {
     queryInterface.bulkInsert("favourites", [
       {
         user_id: 3,
-        restaurant_id: 1,
+        favourite_id: 1,
+        favourite_type: "ORDER",
         created_at: new Date(),
       },
       {
         user_id: 4,
-        restaurant_id: 1,
+        favourite_id: 2,
+        favourite_type: "ORDER",
         created_at: new Date(),
       },
       {
         user_id: 3,
-        restaurant_id: 3,
+        favourite_id: 2,
+        favourite_type: "ORDER",
         created_at: new Date(),
       },
       {
         user_id: 4,
-        restaurant_id: 2,
+        favourite_id: 2,
+        favourite_type: "RESTAURANT",
         created_at: new Date(),
       },
     ]);

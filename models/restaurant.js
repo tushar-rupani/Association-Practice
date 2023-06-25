@@ -3,7 +3,6 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Restaurant extends Model {
     static associate(models) {
-      Restaurant.hasMany(models.Favourites, { foreignKey: "restaurant_id" });
       Restaurant.belongsToMany(models.Tag, { through: models.RestaurantTag });
     }
   }
