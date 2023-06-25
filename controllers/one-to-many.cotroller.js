@@ -48,8 +48,26 @@ const oneToManyForOrders = async (req, res) => {
     return res.status(500).json({ error: "Something Went Wrong!" });
   }
 };
+
+const getUsers = async (req, res) => {
+  try {
+    let { page, pageSize } = req.query;
+    if (page == 0) {
+      page = 1;
+    }
+    const { count, rows } = await User.findAndCountAll({
+      offset: (page - 1) * pageSize,
+      limit: pageSize,
+      attributes: ["id", "username", "email"],
+    });
+    return res.status(200).json({ users: rows, count });
+  } catch (err) {
+    return res.status(500).json({ error: "Something Went Wrong!" });
+  }
+};
 module.exports = {
   oneToManyEagerController,
   oneToManyLazyController,
   oneToManyForOrders,
+  getUsers,
 };
